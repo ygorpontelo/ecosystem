@@ -186,7 +186,7 @@ class Herbivore(Animal):
             self.horny = False
 
     def search_mate(self, time_elapsed):
-        mates = [m for m in self.world.creatures['Herbivore'] if m.gender != self.gender and self.coord.distance_to(m.coord) <= self.vision]
+        mates = [m for m in self.world.creatures['Herbivore'] if m.gender != self.gender and self.coord.distance_to(m.coord) <= self.vision and m.horny]
         
         if len(mates) > 0:
             mates.sort(key= lambda x: self.coord.distance_to(x.coord))
